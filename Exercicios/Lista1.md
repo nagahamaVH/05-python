@@ -51,10 +51,16 @@ If it doesn't print anything, what changes can you make to the program to print 
    lines of code is executed?
 ​
 ```
-​
-    print square(5)
-    print square(2*5)
+numcalls = 0
+def square(x):
+    global numcalls
+    numcalls = numcalls + 1
+    return x * x
+
+print square(5)
+print square(2*5)
 ```
+
 **problem 8:** What will be the output of the following program?
 ​
 ```
