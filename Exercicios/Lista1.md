@@ -170,16 +170,3 @@ If it doesn't print anything, what changes can you make to the program to print 
     else:
         x +
 ```
-​
-## Modules and lists
-​
-**problem 19:** Write a program ``add.py`` that takes 2 numbers as command line
-   arguments and prints its sum.
-​
-```
-​
-    $ python add.py 3 5
-    8
-    $ python add.py 2 9
-    11
-```
