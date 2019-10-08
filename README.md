@@ -9,3 +9,4 @@ Referências dos slides e exercícios:
 * https://anandology.com/python-practice-book/index.html?utm_source=devfreebooks&utm_medium=medium&utm_campaign=DevFreeBooks
 * https://automatetheboringstuff.com/?utm_source=devfreebooks&utm_medium=medium&utm_campaign=DevFreeBooks
 * https://penseallen.github.io/PensePython2e/
+* https://www.practicepython.org/
