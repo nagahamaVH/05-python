@@ -381,9 +381,6 @@ num_type = 'even' if num % 2 == 0 else 'odd'
 print("{} is an {} number".format(num, num_type))
 ```
 
-* Python doesn't have `?:` conditional operator like many other languages
-* Using `if-else` in single line like in this example is one workaround
-* [More ways of simulating ternary conditional operator](http://stackoverflow.com/questions/394809/does-python-have-a-ternary-conditional-operator)
 
 ```
 $ ./if_else_oneliner.py 
@@ -421,13 +418,8 @@ Enter a positive integer: 23
 $ 
 ```
 
-<br>
 
-### <a name="continue-and-break"></a>continue and break
-
-The `continue` and `break` keywords are used to change the normal flow of loops on certain conditions
-
-**continue** - skip rest of statements in the loop and start next iteration
+**continue** - pule o restante das instruções no loop (se houver) e o loop de saída
 
 ```python
 #!/usr/bin/python3
@@ -449,9 +441,6 @@ for num in range(10):
 
 print("")
 ```
-
-* `continue` can be placed anywhere in a loop block without having to worry about complicated code flow
-* this example is just to show use of `continue`, check [this](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) for a more Pythonic way
 
 ```
 $ ./loop_with_continue.py 
