@@ -94,7 +94,7 @@ def greeting():
 greeting()
 ```
 
-Argumentos
+## Argumentos
 
 ```
 # ----- function with arguments -----
@@ -188,7 +188,7 @@ range(0, 5)
 <class 'list'>
 ```
 
-Escopo
+## Escopo
 
 ```
 #!/usr/bin/python3
@@ -215,8 +215,6 @@ def square_of_num(num):
 square_of_num(5)
 print("5 * 5 = {}".format(sqr_num))
 ```
-
-
 
 ```
 $ ./variable_scope_2.py 
