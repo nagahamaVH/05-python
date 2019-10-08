@@ -7,3 +7,5 @@ Referências dos slides e exercícios:
 * https://www.oreilly.com/programming/free/files/a-whirlwind-tour-of-python.pdf
 * https://docs.python-guide.org/
 * https://anandology.com/python-practice-book/index.html?utm_source=devfreebooks&utm_medium=medium&utm_campaign=DevFreeBooks
+* https://automatetheboringstuff.com/?utm_source=devfreebooks&utm_medium=medium&utm_campaign=DevFreeBooks
+* https://penseallen.github.io/PensePython2e/
