@@ -1,0 +1,351 @@
+% ### Uses XeLaTeX ### %
+% ### Needs beamer-master ### %
+\documentclass[aspectratio=169]{beamer} %. Aspect Ratio 16:9
+\usetheme{AI2} % beamerthemeSprace.sty
+% DATA FOR FOOTER
+\date{2019}
+\title{}
+\author{}
+\institute{Advanced Institute for Artificial Intelligence (AI2)}
+\begin{document}    
+% ####################################
+% FIRST SLIDE 						:: \SliTit{<Title of the Talk>}{<Author Name>}{<Intitution>}
+% SLIDE SUB-TITLE					:: \SliSubTit{<Title of the Chapter>}{<Title of the Section>}
+% SLIDE WITH TITLE 					:: \SliT{<Title>}{Content}
+% SLIDE NO TITLE 						:: \Sli{<Content>} 
+% SLIDE DOUBLE COLUMN WITH TITLE 	:: \SliDT{<Title>}{<First Column>}{<Second Column>}
+% SLIDE DOUBLE COLUMN NO TITLE 		:: \SliD{<First Column>}{<Second Column>}
+% SLIDE ADVANCED WITH TITLE 			:: \SliAdvT{<Title>}{<Content>}
+% SLIDE ADVANCED  NO TITLE 			:: \SliAdv{<Content>}
+% SLIDE ADVANCED DOUBLE TITLE 		:: SliAdvDT{<Title>}{<First Column>}{<Second Column>}
+% SLIDE ADVANCED DOUBLE NO TITLE 	:: SliAdvD{<First Column>}{<Second Column>}
+% ITEMIZE 							:: \begin{itemize}  \IteOne{1st Level} \IteTwo {2nd Level} \IteThr{3rd Level} \end{itemize}
+% SECTION 							:: \secx{Section} | \secxx{Sub-Section}
+% COLOR BOX 						:: \blu{blue} + \red{red} + \yel{yellow} + \gre{green}
+% FRAME 							:: \fra{sprace} \frab{blue} \frar{red} + \fray{yellow} + \frag{green}	
+% REFERENCE						:: \refer{<doi number>}
+% FIGURE 							::  \img{X}{Y}{<scale>}{Figures/.png} 
+% FIGURE							:: \begin{center}\includegraphics[scale=<#>]{Figures/.png}\end{center}
+% PROJECT STATUS					:: \planned\~    \started\~   \underway\~   \done\~   
+% EXERCICIO							:: \Exe{<#>}{<text>}
+% STACKREL							:: \underset{<down>}{<up>}
+% FLUSH LEFT						:: \begin{flalign*}  & <1st equation> & \\  & <12nd equation>  & \\ \end{flalign*}
+% REAL / IMAGINAY					:: \Re / \Im
+% SLASH								:: \sl{} or \sl
+% BOLD MATH							:: \pmb{<>}
+% ####################################
+%
+% FIRST SLIDE :: DO NOT BREAK LINE !!!
+\SliTit{Python}{Advanced Institute for Artificial Intelligence}{https://advancedinstitute.ai}
+
+% SLIDE WITH TITLE
+\SliT{Sumario}{
+
+\begin{itemize}
+  \IteOne{Introdução}
+  \IteOne{Estruturas e Função de Controle}
+  \IteOne{Coleções}
+  \IteOne{Programação Orientada a Objetos}
+  \IteOne{Manipulação de arquivos}
+  \IteOne{Processos e Threading}  
+\end{itemize}
+
+}
+
+% SLIDE WITH TITLE
+\SliT{Introdução}{
+
+\begin{itemize}
+  \IteOne{Python é uma linguagem interpretada}
+  \IteOne{Caminho do Python no Sistema}
+  \IteTwo{which python}
+  \IteOne{Versão do Python}
+  \IteTwo{python -V}
+
+\end{itemize}
+
+}
+
+% SLIDE WITH TITLE
+\SliT{Usando Python}{
+
+\begin{itemize}
+  \IteOne{Iniciando interpretador Python}
+  \IteTwo{python}
+  \IteTwo{Python 3.6.8 |Anaconda, Inc.| (default, Dec 30 2018, 01:22:34) }
+  \IteTwo{[GCC 7.3.0] on linux}
+  \IteTwo{Type "help", "copyright", "credits" or "license" for more information.}
+  \IteTwo{$>>>$ Esse é o prompt para receber comandos python }
+  \IteOne{Ctrl+D sai do interpretador }
+\end{itemize}
+
+}
+
+% SLIDE WITH TITLE
+\SliT{Usando Python}{
+
+Comando print
+
+\begin{itemize}
+  \IteOne{print "hello world"}
+  \IteTwo{Em python 2 é possível utilizar dessa forma:}
+  \IteOne{print "hello world"}
+  \IteTwo{Em python 3 é obrigatório utilizar $($ $)$}
+  \IteOne{print ("hello world")}
+\end{itemize}
+
+Comentários no código
+\begin{itemize}
+  \IteOne{# : comentando uma linha}
+  \IteOne{''' : começar e terminar bloco de comentário}
+  \IteOne{""" : começar e terminar bloco de comentário}
+\end{itemize}
+
+}
+
+% SLIDE WITH TITLE
+\SliT{Usando Python}{
+
+Indentação
+
+\begin{itemize}
+  \IteOne{O controle de início e fim deblocos de código é feito por meio de Indentação}
+  \IteOne{Indentação pode ser controlada por um tamanho fixo de espaços em branco}
+  \IteOne{Exemplo}
+  \IteTwo{print ("teste")}
+  \IteTwo{if (i == 0):}
+  \IteTwo{\hspace{1cm} print ("0")}
+  \IteTwo{else:}
+  \IteTwo{\hspace{1cm} print ("outro valor")}
+  \IteTwo{\hspace{1cm} if (i $>$= 0):}
+  \IteTwo{\hspace{2cm} print ($>$=0")}
+
+\end{itemize}
+
+
+}
+% SLIDE WITH TITLE
+\SliT{Tipos de dados - Números}{
+
+Existem três tipos numéricos em python: números inteiros, números de ponto flutuante e números complexos. 
+
+\begin{itemize}
+  \IteOne{Booleanos são um subtipo de números inteiros. }
+  \IteOne{Inteiros têm precisão ilimitada.}
+  \IteOne{Números de ponto flutuante são geralmente implementados usando tipo Double em C}
+\end{itemize}
+
+}
+
+\SliT{Tipos de dados - Strings}{
+
+Strings podem ser manipuladas de diversas maneiras em Python
+
+\begin{itemize}
+  \IteOne{podem ser representadas usando aspas simples ' ' ou aspas duplas " "  }
+  \IteOne{É possível utilizar catacteres escape   }
+
+\end{itemize}
+
+}
+
+
+\SliT{Funções}{
+
+\begin{itemize}
+  \IteOne{A palavra-chave def é usada para definir funções}
+  \IteOne{Deve ser definida antes de ser utilizada}
+  \IteOne{O valor de retorno padrão é None}
+\end{itemize}
+
+}
+
+\SliT{Função}{
+Argumento pode ser gerado da seguinte forma:
+\begin{itemize}
+  \IteOne{nome de variável}
+  \IteOne{nome de variável e tipo padrão}
+\end{itemize}
+
+Escopo de variável
+\begin{itemize}
+  \IteOne{variáveis possuem escopo local ao bloco onde são criadas}
+  \IteOne{Pode ser definidas variáveis globais}
+\end{itemize}
+
+}
+
+\SliT{Funções}{
+
+Função sem argumentos:
+\hfill \break
+\hfill \break
+def greeting():
+
+\hspace{1cm} print("hello world")
+
+\hfill \break
+\hfill \break
+greeting()
+
+}
+
+\SliT{Argumento de Função}{
+
+def numsquare(num):
+
+\hspace{1cm} return num * num
+
+\hfill \break
+number=10
+\hfill \break
+numsquare(number)
+
+\hfill \break
+def numsquare(num=10):
+
+\hspace{1cm} return num * num
+
+\hfill \break
+numsquare()
+
+}
+
+\SliT{Obtendo dados do usuário}{
+
+função input() é utilizada para aguardar um valor digitado no terminal pelo usuário.
+\hfill \break
+\hfill \break
+usrip = input("número inteiro: ")
+\hfill \break
+usrnum = int(usrip)
+\hfill \break
+sqrnum = numsquare(usrnum)
+\hfill \break
+print("Square of entered number is: {}".format(sqrnum))
+\hfill \break
+\hfill \break
+usrip = input("float: ")
+\hfill \break
+usrnum = float(usrip)
+\hfill \break
+sqrnum = numsquare(usrnum)
+\hfill \break
+print("Square of entered number is: {}".format(sqrnum))
+\hfill \break
+\hfill \break
+usrname = input("nome: ")
+\hfill \break
+print("nome: ",usrname)
+
+}
+
+\SliT{Usando bibliotecas adicionais}{
+
+A palavra reservada import permite adicionar pacotes que não são nativos do Python
+\hfill \break
+\hfill \break
+import subprocess
+\hfill \break
+\# Executa um comando linux no terminal
+\hfill \break
+subprocess.call('date')
+\hfill \break
+\hfill \break
+A palavra reservada from premite importar apenas parte de um pacote 
+\hfill \break
+\hfill \break
+exemplo:
+\hfill \break
+\hfill \break
+from sklearn.model\_selection import train\_test\_split
+}
+
+\SliT{Estruturas e Função de Controle}{
+
+Argumento pode ser gerado da seguinte forma:
+\begin{itemize}
+  \IteOne{if}
+  \IteOne{for}
+  \IteOne{while}
+\end{itemize}
+
+}
+
+\SliT{Estruturas e Função de Controle}{
+
+if 
+\begin{itemize}
+  \IteOne{As instruções if avaliam uma condição, caso seja verdadeira executa o bloco seguinte}
+  \IteOne{Pode ser combinado com uma estrutura else, que é executada quando a condição não é verdadeira no bloco if}
+\end{itemize}
+
+Exemplo:
+
+var = 100
+\hfill \break
+if (var==100):
+
+\hspace{1cm} print("100")
+\hfill \break
+else: 
+\hspace{1cm} print("not 100")
+
+}
+
+\SliT{Estruturas e Função de Controle}{
+
+for
+\begin{itemize}
+    \IteOne{executam um certo bloco de código para um número conhecido de iterações. }
+    \IteOne{Um bloco de código pode ser executado para o número de itens existentes em uma lista, dicionário, variável de sequência ou tupla}
+    \IteOne{Um bloco de código pode ser executado em um intervalo contado de etapas}
+\end{itemize}
+
+Exemplo:
+\hfill \break
+
+a=(10,20,30,40,50)
+\hfill \break
+for b in a:
+\break
+\hspace{1cm} print "square of " + str(b) + " is " +str(b*b)
+
+}
+
+
+\SliT{Estruturas e Função de Controle}{
+
+while
+
+\begin{itemize}
+    \IteOne{O loop while é executado enquanto uma declaração condicional retorna true }
+    \IteOne{A instrução condicional é avaliada toda vez que um bloco de código é executado }
+    \IteOne{A execução para no momento em que a instrução condicional retorna false. }
+\end{itemize}
+
+Exemplo:
+\hfill \break
+
+count = 0
+\hfill \break
+while (count $<$ 9):
+    \hfill \break
+    \hfill \break
+    \hspace{1cm} print("iteração",count)
+    \hfill \break
+    \hspace{1cm} count+=1
+
+
+}
+
+
+
+
+
+
+
+
+
+
+\end{document}
