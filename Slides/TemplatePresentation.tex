@@ -96,7 +96,7 @@ Comando print
 
 Comentários no código
 \begin{itemize}
-  \IteOne{# : comentando uma linha}
+  \IteOne{\# : comentando uma linha}
   \IteOne{''' : começar e terminar bloco de comentário}
   \IteOne{""" : começar e terminar bloco de comentário}
 \end{itemize}
@@ -340,12 +340,314 @@ while (count $<$ 9):
 }
 
 
+\SliT{Coleções}{
+
+Uma coleção nos permite colocar muitos valores em uma única "variável"
+
+Uma coleção é útil para transportar valores em um único pacote.
+
+friends = [ 'Joseph', 'Glenn', 'Sally' ]
+
+carryon = [ 'socks', 'shirt', 'perfume' ]
+
+Coleções em python:
+
+list, set, stack, dictionary, tuplas, entre outros
+
+}
+
+\SliDT{List}{
+
+Os elementos na lista (list) são separados por vírgulas.
+
+Um elemento da lista pode ser qualquer objeto Python - até outra lista
+
+Uma lista pode estar vazia
+
+Operador index representa uma posição na lista
+}{
+list = [1, 24, 76]
+
+list = ['red', 'yellow', 'blue']
+
+list = ['red', 24, 98.599999999999994]
+
+list = [1, [5, 6], 7]
+
+l[0] =$>$ 1
+}
+
+\SliT{List}{
+
+Listas são mutáveis
+
+lotto = [2, 14, 26, 41, 63]
+
+print lotto
+
+[2, 14, 26, 41, 63]
+
+lotto[2] = 28
+
+print lotto
+
+[2, 14, 28, 41, 63]
+
+Operador \textbf{len} retorna tamanho da lista
+
+print len(lotto)
+
+5
+}
+
+
+\SliT{List}{
+
+\textbf{Append} adiciona elementos no fim da lista
+
+Operador \textbf{in} pode ser usado para verificar se um elemento existe na lista
+
+\textbf{sort} classifica a lista
+
+\textbf{split} quebra uma string em partes menores usando estrutura de lista
+}
+
+\SliT{Dicionários}{
+
+Dicionários são estruturas que mapeiam chaves para valores
+
+Operações: 
+
+print, del, len, in
+
+Métodos: 
+
+keys(), values(), items()
+
+}
+
+\SliT{Dicionários}{
+
+eng2sp = ${}$
+
+Adicionando valores
+
+$>>>$ eng2sp['one'] = 'uno'
+
+$>>>$ eng2sp['two'] = 'dos'
+
+declarando dicionário com valores iniciais
+
+$>>>$ eng2sp = ${$ 'one': 'uno', 'two': 'dos', 'three':'tres' $}$
+
+}
+
+
+\SliT{List Comprehensions}{
+
+Aplica uma expressão a cada elemento da lista
+
+vec = [2, 4, 6]
+
+$>>>$ [3*x for x in vec]
+
+    [6, 12, 18]
+
+$>>>$ [3*x for x in vec if x > 3]
+
+    [12, 18]
+
+}
+
+\begin{comment}
+\SliT{Tupla}{
+
+uma sequência ordenada de elementos, pode misturar tipos de elementos
+não pode alterar os valores dos elementos (imutável)
+
+}
+\end{comment}
+
+\SliT{slicing}{
+Listas podem ser filtradas por meio de 'slicing' 
+
+
+s[start:end:step]
+
+Elementos:
+
+s: um objeto que pode ser manipulado por "slicing"
+
+start: primeiro índice para iniciar a iteração
+
+end: último indíce, NOTE que o índice final não será incluído na fatia resultante
+
+step: escolha o elemento a cada índice de etapa
+
+}
+
+\SliT{slicing}{
+
+Selecionar itens a partir do índice start até stop-1
+
+a[start:stop]  
+
+Selecionar itens a partir do índice start até o final
+
+a[start:]      
+
+Selecionar itens a partir do início start até stop-1
+
+a[:stop]       
+
+Copia toda a lista
+
+a[:]           
+
+}
+
+\SliT{slicing}{
+
+Selecionar itens a partir do índice start não passando de stop-1, realizando pulos definidos na variável step
+
+a[start:stop:step]
+
+Último item da lista
+
+a[-1]    
+
+Últimos dois itens da lista
+
+a[-2:]   
+
+Tudo menos os dois úlitmos
+
+a[:-2]   
+}
+
+\SliT{Orientação a objeto}{
+
+TUDO EM PYTHON É UM OBJETO (e tem um tipo)
+
+pode criar novos objetos de algum tipo
+
+pode manipular objetos
+
+pode destruir objetos
+
+usar explicitamente del ou apenas “esquecê-los” (Garbage collector)
+}
+
+\SliT{Orientação a objeto}{
+
+objetos são uma abstração de dados 
+
+possuem uma representação interna
+
+através de atributos de dados
+
+uma interface para interagir com o objeto
+ 
+através de métodos
+
+define comportamento, mas oculta implementação
+
+}
+
+\SliT{Orientação a objeto}{
+
+Vantagens da orienração a objetos
+
+Aumento de modularidade para dividir a complexidade de implementação
+
+Reuso de código entre diversos programas
+
+baixo acoplamento por meio de interfaces
+
+}
+
+\SliT{Orientação a objeto}{
+
+Definindo uma nova classe
+
+class Coordinate( object ):
+
+definição de atributos
+definição de métodos
+
+Implementação de construtos: método  __init__ 
+
+def __init__(self, x, y):
+self.x = x
+self.y = y
+}
+
+\SliT{Orientação a objeto}{
+
+overload de método print: def __str__(self): 
+
+Exemplo:
+
+def __str__(self):
+return "<"+str(self.x)+","+str(self.y)+">"
+
+}
+
+\SliT{Manipulação de Texto}{
+
+Prepara o arquivo para leitura:
+
+Vincula a variável do arquivo ao arquivo físico
+
+Posiciona o ponteiro do arquivo no início do arquivo.
+
+Formato: 
+     $<$variável do arquivo$>$ = open ($<$nome do arquivo$>$, "r")
+
+Exemplo:
+    inputFile = open ("data.txt", "r")
+OU
+    filename = input ("Digite o nome do arquivo de entrada:")
+    inputFile = open (filename, "r")
+
+}
+
+\SliT{Manipulação de Texto}{
+
+Normalmente, a leitura é feita dentro do corpo de um loop
+
+Cada execução do loop lê uma linha do arquivo em uma string
+
+Formato:
+
+for $<$variável para armazenar uma sequência$>$ em $<$nome da variável do arquivo$>$:
+    $<$Faça algo com a string lida no arquivo$>$
+
+Exemplo:
+
+for line in inputFile:
+    print (line) 
+
+}
+
+\SliT{Manipulação de Texto}{
+
+Comando para fechar um arquivo
+
+Formato:
+
+$<$name of file variable$>$.close()
+
+Exemplo:
+
+inputFile.close()
+
+}
 
 
 
+\SliT{MultiThreading}{
 
-
-
-
+}
 
 \end{document}
