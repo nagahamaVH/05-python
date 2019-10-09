@@ -456,3 +456,193 @@ even_numbers = [num for num in numbers if not num % 2]
 4
 ```
 
+## Tuples
+
+
+```python
+>>> north_dishes = ('Aloo tikki', 'Baati', 'Khichdi', 'Makki roti', 'Poha')
+>>> north_dishes
+('Aloo tikki', 'Baati', 'Khichdi', 'Makki roti', 'Poha')
+
+>>> north_dishes[0]
+'Aloo tikki'
+>>> north_dishes[-1]
+'Poha'
+>>> north_dishes[6]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: tuple index out of range
+
+>>> north_dishes[::-1]
+('Poha', 'Makki roti', 'Khichdi', 'Baati', 'Aloo tikki')
+
+>>> north_dishes[0] = 'Poori'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+```
+
+* operações
+
+```python
+>>> 'roti' in north_dishes
+False
+>>> 'Makki roti' in north_dishes
+True
+
+>>> len(north_dishes)
+5
+
+>>> min(north_dishes)
+'Aloo tikki'
+>>> max(north_dishes)
+'Poha'
+
+>>> for dish in north_dishes:
+...     print(dish)
+... 
+Aloo tikki
+Baati
+Khichdi
+Makki roti
+Poha
+```
+
+
+## Set
+
+
+```python
+>>> nums = {3, 2, 5, 7, 1, 6.3}
+>>> nums
+{1, 2, 3, 5, 6.3, 7}
+
+>>> primes = {3, 2, 11, 3, 5, 13, 2}
+>>> primes
+{2, 3, 11, 13, 5}
+
+>>> nums.union(primes)
+{1, 2, 3, 5, 6.3, 7, 11, 13}
+
+>>> primes.difference(nums)
+{11, 13}
+>>> nums.difference(primes)
+{1, 6.3, 7}
+```
+
+* Example operations
+
+```python
+>>> len(nums)
+6
+
+>>> nums[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object does not support indexing
+
+>>> book
+'Alchemist'
+>>> set(book)
+{'i', 'l', 's', 'A', 'e', 'h', 'm', 't', 'c'}
+>>> set([1, 5, 3, 1, 9])
+{1, 9, 3, 5}
+>>> list(set([1, 5, 3, 1, 9]))
+[1, 9, 3, 5]
+
+>>> nums = {1, 2, 3, 5, 6.3, 7}
+>>> nums
+{1, 2, 3, 5, 6.3, 7}
+>>> nums.pop()
+1
+>>> nums
+{2, 3, 5, 6.3, 7}
+
+>>> nums.add(1)
+>>> nums
+{1, 2, 3, 5, 6.3, 7}
+
+>>> 6.3 in nums
+True
+
+>>> for n in nums:
+...     print(n)
+... 
+1
+2
+3
+5
+6.3
+7
+```
+
+## Dicionário
+
+
+```python
+>>> marks = {'Rahul' : 86, 'Ravi' : 92, 'Rohit' : 75}
+>>> marks
+{'Ravi': 92, 'Rohit': 75, 'Rahul': 86}
+
+>>> fav_books = {}
+>>> fav_books['fantasy']   = 'Harry Potter'
+>>> fav_books['detective'] = 'Sherlock Holmes'
+>>> fav_books['thriller']  = 'The Da Vinci Code'
+>>> fav_books
+{'thriller': 'The Da Vinci Code', 'fantasy': 'Harry Potter', 'detective': 'Sherlock Holmes'}
+
+>>> marks.keys()
+dict_keys(['Ravi', 'Rohit', 'Rahul'])
+
+>>> fav_books.values()
+dict_values(['The Da Vinci Code', 'Harry Potter', 'Sherlock Holmes'])
+```
+
+* looping and printing
+
+```python
+>>> for book in fav_books.values():
+...     print(book)
+... 
+The Da Vinci Code
+Harry Potter
+Sherlock Holmes
+
+>>> for name, mark in marks.items():
+...     print(name, mark, sep=': ')
+... 
+Ravi: 92
+Rohit: 75
+Rahul: 86
+
+>>> import pprint
+>>> pp = pprint.PrettyPrinter(indent=4)
+>>> pp.pprint(fav_books)
+{   'detective': 'Sherlock Holmes',
+    'fantasy': 'Harry Potter',
+    'thriller': 'The Da Vinci Code'}
+```
+
+* exemplos
+
+```python
+>>> marks
+{'Ravi': 92, 'Rohit': 75, 'Rahul': 86}
+>>> marks['Rajan'] = 79
+>>> marks
+{'Ravi': 92, 'Rohit': 75, 'Rahul': 86, 'Rajan': 79}
+
+>>> del marks['Ravi']
+>>> marks
+{'Rohit': 75, 'Rahul': 86, 'Rajan': 79}
+
+>>> len(marks)
+3
+
+>>> fav_books
+{'thriller': 'The Da Vinci Code', 'fantasy': 'Harry Potter', 'detective': 'Sherlock Holmes'}
+>>> "fantasy" in fav_books
+True
+>>> "satire" in fav_books
+False
+```
