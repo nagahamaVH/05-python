@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/silvio/testefiep/lib')
+sys.path.append(''lib')
 
 from lib import *
 
