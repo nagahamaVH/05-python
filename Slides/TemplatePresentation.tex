@@ -66,6 +66,10 @@
 
 }
 
+
+
+
+
 % SLIDE WITH TITLE
 \SliT{Usando Python}{
 
@@ -239,7 +243,6 @@ usrname = input("nome: ")
 print("nome: ",usrname)
 
 }
-
 \SliT{Usando bibliotecas adicionais}{
 
 A palavra reservada import permite adicionar pacotes que não são nativos do Python
@@ -312,7 +315,6 @@ for b in a:
 \hspace{1cm} print "square of " + str(b) + " is " +str(b*b)
 
 }
-
 
 \SliT{Estruturas e Função de Controle}{
 
@@ -438,9 +440,10 @@ $>>>$ eng2sp['two'] = 'dos'
 
 declarando dicionário com valores iniciais
 
-$>>>$ eng2sp = ${$ 'one': 'uno', 'two': 'dos', 'three':'tres' $}$
+$>>>$ eng2sp = [] 'one': 'uno', 'two': 'dos', 'three':'tres' ]
 
 }
+
 
 
 \SliT{List Comprehensions}{
@@ -468,166 +471,91 @@ não pode alterar os valores dos elementos (imutável)
 }
 \end{comment}
 
-\SliT{slicing}{
+\SliT{Slicing}{
+
 Listas podem ser filtradas por meio de 'slicing' 
 
-
-s[start:end:step]
+Formato para realizar 'slicing' em uma lista: s[start:end:step]
 
 Elementos:
 
-s: um objeto que pode ser manipulado por "slicing"
+\begin{itemize}
+    \IteOne{s: um objeto que pode ser manipulado por 'slicing' }
+    \IteOne{start: primeiro índice para iniciar a iteração }
+    \IteOne{end: último indíce, NOTE que o índice final não será incluído na fatia resultante }
+    \IteOne{step: escolha o elemento a cada índice de etapa }
+\end{itemize}
 
-start: primeiro índice para iniciar a iteração
-
-end: último indíce, NOTE que o índice final não será incluído na fatia resultante
-
-step: escolha o elemento a cada índice de etapa
-
-}
-
-\SliT{slicing}{
-
-Selecionar itens a partir do índice start até stop-1
-
-a[start:stop]  
-
-Selecionar itens a partir do índice start até o final
-
-a[start:]      
-
-Selecionar itens a partir do início start até stop-1
-
-a[:stop]       
-
-Copia toda a lista
-
-a[:]           
 
 }
 
-\SliT{slicing}{
+\SliT{Slicing}{
 
-Selecionar itens a partir do índice start não passando de stop-1, realizando pulos definidos na variável step
+Alguns Exemplos:
 
-a[start:stop:step]
+\begin{itemize}
+    \IteOne{Selecionar itens a partir do índice start até stop-1 }
+    \IteTwo{a[start:stop] }
+    \IteOne{Selecionar itens a partir do índice start até o final }
+   \IteTwo{a[start:] }
+    \IteOne{Selecionar itens a partir do início start até stop-1 }
+    \IteTwo{a[:stop] }
+    \IteOne{Copia toda a lista }
+    \IteTwo{a[:] }
 
-Último item da lista
-
-a[-1]    
-
-Últimos dois itens da lista
-
-a[-2:]   
-
-Tudo menos os dois úlitmos
-
-a[:-2]   
+\end{itemize}
 }
 
-\SliT{Orientação a objeto}{
+\SliT{Slicing}{
 
-TUDO EM PYTHON É UM OBJETO (e tem um tipo)
+Alguns Exemplos:
 
-pode criar novos objetos de algum tipo
-
-pode manipular objetos
-
-pode destruir objetos
-
-usar explicitamente del ou apenas “esquecê-los” (Garbage collector)
+\begin{itemize}
+    \IteOne{Selecionar itens a partir do índice start não passando de stop-1, realizando pulos definidos na variável step}
+    \IteTwo{a[start:stop:step]}
+    \IteOne{Último item da lista}
+    \IteTwo{a[-1] }   
+    \IteOne{Últimos dois itens da lista}
+    \IteTwo{a[-2:] }  
+    \IteOne{Tudo menos os dois úlitmos}
+    \IteTwo{a[:-2]  } 
+\end{itemize}
 }
 
-\SliT{Orientação a objeto}{
+\SliT{Slicing}{
 
-objetos são uma abstração de dados 
+Alguns Exemplos:
 
-possuem uma representação interna
+\begin{itemize}
+    \IteOne{Quando a lista possuir mais de uma dimensão, é necessário realizar o slicing separadamente em cada dimensão}
+\end{itemize}
 
-através de atributos de dados
-
-uma interface para interagir com o objeto
- 
-através de métodos
-
-define comportamento, mas oculta implementação
-
-}
-
-\SliT{Orientação a objeto}{
-
-Vantagens da orienração a objetos
-
-Aumento de modularidade para dividir a complexidade de implementação
-
-Reuso de código entre diversos programas
-
-baixo acoplamento por meio de interfaces
-
-}
-
-\SliT{Orientação a objeto}{
-
-Definindo uma nova classe
-
-class Coordinate( object ):
-
-definição de atributos
-definição de métodos
-
-Implementação de construtos: método  __init__ 
-
-def __init__(self, x, y):
-self.x = x
-self.y = y
-}
-
-\SliT{Orientação a objeto}{
-
-overload de método print: def __str__(self): 
-
-Exemplo:
-
-def __str__(self):
-return "<"+str(self.x)+","+str(self.y)+">"
+\begin{itemize}
+    \IteOne{Apagando elementos de uma lista}
+    \IteTwo{del a[3:7]  } 
+\end{itemize}
 
 }
 
 \SliT{Manipulação de Texto}{
 
-Prepara o arquivo para leitura:
+Abrir um arquivo:
 
-Vincula a variável do arquivo ao arquivo físico
-
-Posiciona o ponteiro do arquivo no início do arquivo.
+\begin{itemize}
+    \IteOne{Preparar o arquivo para leitura:}
+    \IteOne{Vincula a variável do arquivo ao arquivo físico   } 
+    \IteOne{Posiciona o ponteiro do arquivo no início do arquivo.   } 
+\end{itemize}
 
 Formato: 
      $<$variável do arquivo$>$ = open ($<$nome do arquivo$>$, "r")
 
 Exemplo:
     inputFile = open ("data.txt", "r")
-OU
+    
     filename = input ("Digite o nome do arquivo de entrada:")
+    
     inputFile = open (filename, "r")
-
-}
-
-\SliT{Manipulação de Texto}{
-
-Normalmente, a leitura é feita dentro do corpo de um loop
-
-Cada execução do loop lê uma linha do arquivo em uma string
-
-Formato:
-
-for $<$variável para armazenar uma sequência$>$ em $<$nome da variável do arquivo$>$:
-    $<$Faça algo com a string lida no arquivo$>$
-
-Exemplo:
-
-for line in inputFile:
-    print (line) 
-
 }
 
 \SliT{Manipulação de Texto}{
@@ -644,10 +572,333 @@ inputFile.close()
 
 }
 
+\SliT{Manipulação de Texto}{
 
+Normalmente, a leitura é feita dentro do corpo de um loop
+
+Cada execução do loop lê uma linha do arquivo em uma string
+
+Formato:
+
+for $<$variável para armazenar uma sequência$>$ em $<$nome da variável do arquivo$>$:
+
+    $<$Faça algo com a string lida no arquivo$>$
+
+Exemplo:
+
+for line in inputFile:
+    print (line) 
+
+}
+
+
+%\SliT{Manipulação de Texto}{
+
+%Escrita de arquivo
+
+%Exemplo 1:
+
+%f = open("f.txt", "w")
+
+%f.write("teste")
+
+%f.close()    
+
+%Exemplo 2:
+
+%with open("new_file.txt", "w") as f:
+
+%    f.write("This is a sample line of text\n")
+    
+%    f.write("Yet another line\n")
+
+%}
+
+
+\SliT{Orientação a objeto}{
+
+Orientação a Objetos surgiu da necessidade de modelar sistemas complexos
+
+\begin{itemize}
+    \IteOne{Modelar problemas utilizando um conjunto de componentes autocontindo, e integráveis}
+    \IteOne{Determinar como um objeto deve se comportar e como deve interagir com outros objetos}
+\end{itemize}
+
+Algumas iniciativas:
+
+\begin{itemize}
+    \IteOne{Simula 67 (60)}
+    \IteOne{Smalltalk (70)}
+    \IteOne{C++ (80)}
+\end{itemize}
+
+}
+
+\SliT{Orientação a objeto}{
+
+Conceitos essenciais:
+\begin{itemize}
+    \IteOne{Classes e objetos}
+    \IteOne{Atributos e Métodos}
+    \IteOne{Herança}
+    \IteOne{Encapsulamento}
+\end{itemize}
+
+}
+
+\SliT{Orientação a objeto}{
+
+Os objetos reais possuem duas caracterísicas:
+
+\begin{itemize}
+    \IteOne{Estado (Atributos)}
+    \IteOne{Comportamento}
+\end{itemize}
+
+Exemplos:
+\begin{itemize}
+    \IteOne{cachorro}
+    \IteTwo{Estado: nome, cor, raça}
+    \IteTwo{Comportamento: latindo, abanando o rabo, comendo}
+\end{itemize}
+
+}
+
+\SliT{Orientação a objeto}{
+
+Um objeto de software é conceitualmente similar aos objetos reais
+
+\begin{itemize}
+    \IteOne{Objetos armazenam seu estado em atributos}
+    \IteTwo{Correspondentes às variáveis em programação estruturada.}
+
+    \IteOne{Objetos expõem seu comportamento através de métodos}
+    \IteTwo{Correspondentes às funções em programação estruturada.}
+\end{itemize}
+
+}
+
+
+\SliT{Orientação a objeto}{
+
+Exemplos de objeto:
+
+\begin{itemize}
+    \IteOne{Gerenciador de Dados de Alunos}
+    \IteTwo{Estado: lista de alunos}
+    \IteTwo{Comportamento: filtrar alunos por nome, incluir aluno, alterar aluno}
+\end{itemize}
+
+\begin{itemize}
+    \IteOne{Biblioteca Matemática}
+    \IteTwo{Estado: Matriz }
+    \IteTwo{Comportamento: calcular transposta, multiplicar, somar }
+\end{itemize}
+
+}
+
+\SliT{Orientação a objeto}{
+
+Empacotar o código em objetos individuais fornece:
+\begin{itemize}
+    \IteOne{Modularidade }
+    \IteTwo{Objetos são independente}
+    \IteOne{Encapsulamento }
+    \IteTwo{Os detalhes da implementação de um objeto permanecem ocultos}
+    \IteOne{Reuso }
+    \IteTwo{Objetos podem ser reutilizados em diferentes programas}
+    \IteOne{Fraco acoplamento }
+    \IteTwo{Objetos podem ser substituídos facilmente}
+\end{itemize}
+
+}
+
+\SliT{Orientação a objeto}{
+
+Uma classe é o projeto a partir do qual objetos individuais são criados
+
+\begin{itemize}
+    \IteOne{Ela define os atributos e os métodos correspondentes aos seus objetos. }
+    \IteOne{Outros possíveis membros de uma classe são:}
+    \IteTwo{Construtores: define as operações a serem realizadas quando um objeto é criado.}
+    \IteTwo{Destrutores: define as operações a serem realizadas quando um objeto é destruído.}
+\end{itemize}
+
+}
+
+\SliT{Orientação a objeto}{
+
+Outras características de uma classe:
+
+\begin{itemize}
+    \IteOne{Uma classe pode herdar características de outra classe e incluir novas características}
+    \IteOne{Atributos de uma classe podem ser protegidos, sendo possível alterar seu conteúdo por meio apenas de métodos da própria classe}
+    \IteOne{Métodos podem ser reescritos}
+\end{itemize}
+
+}
+
+\SliT{Orientação a objeto}{
+
+\begin{itemize}
+    \IteOne{O relacionamento de Herança define um relacionamento do tipo generalização}
+    \IteOne{Indica que uma classe (subclasse) é especializada para gerar uma nova (superclasse)}
+    \IteOne{Tudo que a superclasse possui, a subclasse também vai possuir}
+    \IteOne{Em Python, todas as classes herdam a classe Object}
+\end{itemize}
+
+}
+
+
+\begin{frame}[fragile] \frametitle{Orientação a objeto}
+
+\begin{center}
+    \includegraphics[scale=0.27]{heranca1.png}     
+    \end{center}
+}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Orientação a objeto}
+Método Construtor em Python
+
+\begin{verbatim}
+def __init__(self):
+    Comandos do construtor
+    
+\end{verbatim}
+
+
+Parâmetro para referenciar ao objeto criado: self
+
+self.name cria uma variável name e associa ao objeto criado.
+
+\begin{verbatim}
+class Critter:
+    def __init__(self, name):
+        self.name = name
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Orientação a objeto}
+
+Para definir Métodos Privados em Python é necessário incluir: \begin{verbatim}__\end{verbatim}
+
+Exemplo:
+\begin{verbatim}
+__a 
+__my_variable
+\end{verbatim}
+
+Para definir que Classe deve herdar outra Classe, deve se colocar o nome da classe a ser herdade entre (), logo após o nome da classe:
+
+\begin{verbatim}
+class teste(object):
+    def __init__(self, X):
+        self.X = X
+\end{verbatim}
+
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Orientação a objeto}
+
+Exemplo de uma classe em Python
+\begin{verbatim}
+class MyClass:
+    def function(self):
+        print("This is a message inside the class.")
+\end{verbatim}
+
+Instanciando um objeto e chamando métodos:
+\begin{verbatim}
+myobjectx = MyClass()
+myobjectx.function()
+\end{verbatim}
+
+\end{frame}
+
+
+\begin{frame}[fragile] \frametitle{Orientação a objeto}
+
+Exemplo de uma classe em Python
+\begin{verbatim}
+# Classe que representa uma coordenada X Y
+class Coordinate(object):
+    #define um construtor
+    def __init__(self, x, y):
+        # configura coordenada x e y
+        self.x = x
+        self.y = y
+    #reimplementa a função __str__    
+    def __str__(self):
+        # Representação em string da coordenada
+        return "<" + str(self.x) + "," + str(self.y) + ">"
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Orientação a objeto}
+
+\begin{verbatim}
+def distance(self, other):
+    # Calcula distancia euclidiana entre dois pontos
+    x_diff_sq = (self.x-other.x)**2
+    y_diff_sq = (self.y-other.y)**2
+    return (x_diff_sq + y_diff_sq)**0.5
+\end{verbatim}
+
+Teste de Uso da Classe
+\begin{verbatim}
+c = Coordinate(3,4)
+origin = Coordinate(0,0)
+print("Coordenada 1:")
+print(c)
+print(c.distance(origin))
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Orientação a objeto}
+Teste com atributos protegidos
+
+\begin{verbatim}
+class MyClass:
+    __variable = 0
+    def setvariable(self,newvar):
+        self.__variable = newvar
+    def getvariable(self):
+        return (self.__variable)
+    def function(self):
+        print("This is a message inside the class.")
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Orientação a objeto}
+Teste com atributos protegidos
+
+\begin{verbatim}
+var="rs2"
+myobjectx = MyClass()
+myobjectx.function()
+print(myobjectx.getvariable())
+var="rs3"
+myobjectx.setvariable(var)
+print(myobjectx.getvariable())
+\end{verbatim}
+
+\end{frame}
+
+\SliT{Criando Pacotes para Compartilhamento de Classes}{
+
+}
 
 \SliT{MultiThreading}{
 
 }
+
+\end{frame}
 
 \end{document}
