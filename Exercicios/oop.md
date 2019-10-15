@@ -12,9 +12,9 @@
 
 ** StopWords : são palavras que são consideradas irrelevantes para o conjunto de resultados a ser exibido em uma busca realizada em uma search engine. Exemplos: as, e, os, de, para, com, sem, foi.
 
-Exemplo de texto que pode ser usado como entrada: https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt
+** Exemplo de texto que pode ser usado como entrada: https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt
 
-## Inclua nessa classe um método que retorne a distância entre duas palavras:
+### Inclua nessa classe um método que retorne a distância entre duas palavras:
 
 * Você pode criar um método próprio para medir a distância entre duas palavras, ou pode se basear em métodos existentes, como por exemplo, alguns citados aqui: https://itnext.io/string-similarity-the-basic-know-your-algorithms-guide-3de3d7346227
 
