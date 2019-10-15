@@ -2,11 +2,19 @@
 
 ### Modele uma classe que realiza as seguintes operações em um arquivo texto
 
+* Represente um texto como uma lista de Strings
+* Retorne individualmente cada palavra do texto
 * Conte a quantidade de ocorrências de cada palavra do texto
 * Retorne as 10 palavras mais frequentes
-* Retorne a média e desvio padrão da quantidade de ocorrência
-* Cadastre StopWords (A classe pode contar uma lista ilimitada de StopWords)
+* Retorne a média e desvio padrão da quantidade de ocorrências
+* Cadastre StopWords (A classe deve possuir um atributo com uma lista de StopWords)
 * Retorne um novo arquivo eliminando todas as StopWords do texto
 
 ** StopWords : são palavras que são consideradas irrelevantes para o conjunto de resultados a ser exibido em uma busca realizada em uma search engine. Exemplos: as, e, os, de, para, com, sem, foi.
+
+Exemplo de texto que pode ser usado como entrada: https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt
+
+## Inclua nessa classe um método que retorne a distância entre duas palavras:
+
+Nesse artigo são sugeridos alguns métodos: https://itnext.io/string-similarity-the-basic-know-your-algorithms-guide-3de3d7346227
 
