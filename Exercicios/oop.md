@@ -16,5 +16,5 @@ Exemplo de texto que pode ser usado como entrada: https://ocw.mit.edu/ans7870/6/
 
 ## Inclua nessa classe um método que retorne a distância entre duas palavras:
 
-Nesse artigo são sugeridos alguns métodos: https://itnext.io/string-similarity-the-basic-know-your-algorithms-guide-3de3d7346227
+* Você pode criar um método próprio para medir a distância entre duas palavras, ou pode se basear em métodos existentes, como por exemplo, alguns citados aqui: https://itnext.io/string-similarity-the-basic-know-your-algorithms-guide-3de3d7346227
 
