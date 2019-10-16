@@ -1,5 +1,7 @@
 * Estudos na área de ecologia e conservação da biodiversidade são baseados em observações da natureza. Para que tais estudos normalmente é necessário utilizar uma grande quantidade de dados em grandes escala geografica e temporal.
 
+O que é Informática para Biodiversidade: https://figshare.com/articles/Introduction_to_Biodiversity_Informatics/1295382
+
 * Diversos portais reunem dados de observações que são chamados dados de ocorrência. Um dado de ocorrência é definido como uma observação individual de um animal ou planta, para essa observação muitas informações podem ser registradas, tais como, taxonomia da espécie, data, hora, local (lat/log), nome comum, coleção a que pertence, entre outros. Alguns metadados definem centenas de campos que podem ser preenchidos para cada observação.
 
 * Diversos portais, tais como, Gbif, ALA, bson, canadensys, entre outros, reunem informações de dados de ocorrência para uso público.
