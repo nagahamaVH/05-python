@@ -1,13 +1,12 @@
-Estudos na área de ecologia e conservação da biodiversidade são baseados em observações da natureza. Para que tais estudos normalmente é necessário utilizar uma grande quantidade de dados em grandes escala geografica e temporal.
+* Estudos na área de ecologia e conservação da biodiversidade são baseados em observações da natureza. Para que tais estudos normalmente é necessário utilizar uma grande quantidade de dados em grandes escala geografica e temporal.
 
-Diversos portais reunem dados de observações que são chamados dados de ocorrência. Um dado de ocorrência é definido como uma observação individual de um animal ou planta, para essa observação muitas informações podem ser registradas, tais como, taxonomia da espécie, data, hora, local (lat/log), nome comum, coleção a que pertence, entre outros. Alguns metadados definem centenas de campos que podem ser preenchidos para cada observação.
+* Diversos portais reunem dados de observações que são chamados dados de ocorrência. Um dado de ocorrência é definido como uma observação individual de um animal ou planta, para essa observação muitas informações podem ser registradas, tais como, taxonomia da espécie, data, hora, local (lat/log), nome comum, coleção a que pertence, entre outros. Alguns metadados definem centenas de campos que podem ser preenchidos para cada observação.
 
-Diversos portais, tais como, Gbif, ALA, bson, canadensys, entre outros, reunem informações de dados de ocorrência para uso público.
+* Diversos portais, tais como, Gbif, ALA, bson, canadensys, entre outros, reunem informações de dados de ocorrência para uso público.
 
-Uma área de pesquisa referente a dados de biodiversidade é quanto a qualidade desses dados. (https://www.researchgate.net/publication/264387406_Data_Quality_Control_in_Biodiversity_Informatics_The_Case_of_Species_Occurrence_Data)
+* Uma área de pesquisa referente a dados de biodiversidade é quanto a qualidade desses dados. (https://www.researchgate.net/publication/264387406_Data_Quality_Control_in_Biodiversity_Informatics_The_Case_of_Species_Occurrence_Data)
 
-
-Nessa atividade dados de ocorrência de diferentes portais em formato CSV são fornecidos para que seja feita uma análise descritiva dessa informação, com base na qualidade dos dados. Nesse sentido, crie uma classe python que realize as seguintes funções:
+* Nessa atividade dados de ocorrência de diferentes portais em formato CSV são fornecidos para que seja feita uma análise descritiva dessa informação, com base na qualidade dos dados. Nesse sentido, crie uma classe python que realize as seguintes funções:
 
 1) Para cada coluna identique a quantidade de linhas com dados faltantes (em alguns casos, o dado faltante é uma string vazia, em outros casos é uma string contendo algum valor do tipo: "sem informação"). Faça um método que retorna a média de dados faltantes por coluna
 
