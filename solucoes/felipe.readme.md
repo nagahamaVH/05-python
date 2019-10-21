@@ -8,4 +8,4 @@
 ### Entregas (pasta /felipe/)
 
 - Lista 01: `exPy01.py` *OK*
-  - Obs.: Parte não interpletada está em comentários com `#`
+  - Obs.: Parte não interpretada está em comentários com `#`
