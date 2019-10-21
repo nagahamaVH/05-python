@@ -1,4 +1,4 @@
-# Exerícios
+# Exercícios
 
 ## Entrega das atividades
 
