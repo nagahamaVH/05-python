@@ -21,7 +21,7 @@ def power(x,y):
 
 O nome do pacote é o nome da pasta na qual os arquivos estão armazenados
 
-Para que o diretório seja definido com um pacote, deve conter um arquivo python com o seguinte nome: __init__.py 
+Para que o diretório seja definido com um pacote, deve conter um arquivo python com o seguinte nome: \__init\__.py 
 
 O diretório de pacote ficará na seguintes pasta: ~/myapp/package
 
