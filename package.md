@@ -32,3 +32,9 @@ app.py
 from package import functions
 functions.power(3,2)
 ```
+
+app2.py
+```
+from package.functions import sum
+functions.sum(3,2)
+```
