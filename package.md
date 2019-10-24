@@ -47,9 +47,7 @@ power(3,2)
 
 app3.py
 ```
-import package.textFunctions
-
-SayHello("a")
-    
-repeatString("abc",3)
+from package import textFunctions
+textFunctions.SayHello("a")
+textFunctions.repeatString("abc",3)
 ```
