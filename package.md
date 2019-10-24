@@ -51,3 +51,28 @@ from package import textFunctions
 textFunctions.SayHello("a")
 textFunctions.repeatString("abc",3)
 ```
+## Instalado pacotes no ambiente conda
+
+Definindo arquivo setup.py
+
+```
+from setuptools import setup
+setup(name='package',
+version='0.1',
+description='Testing installation of Package',
+url='#',
+author='Silvio',
+author_email='silvio.stanzani@sprace.org.br',
+license='N/D',
+packages=['package'],
+install_requires=[
+          'pandas',
+      ],
+zip_safe=False)
+```
+
+Instalado pacote no ambiente conda
+
+```
+pip install .
+```
