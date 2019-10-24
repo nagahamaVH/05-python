@@ -51,6 +51,5 @@ import package.textFunctions
 
 SayHello("a")
     
-repeatString("abc",3):
-
+repeatString("abc",3)
 ```
