@@ -1,10 +1,15 @@
 ## Criando um pacote
 
-Arquivo python greet.py
+Arquivo python textFunctions.py
 ```
 def SayHello(name):
     print("Hello " + name)
     return
+    
+def repeatString(str,num):
+    print(str*num)
+    return
+    
 ```
 
 Arquivo python functions.py
@@ -36,5 +41,16 @@ functions.power(3,2)
 app2.py
 ```
 from package.functions import sum
-functions.sum(3,2)
+sum(3,2)
+power(3,2)
+```
+
+app3.py
+```
+import package.textFunctions
+
+SayHello("a")
+    
+repeatString("abc",3):
+
 ```
