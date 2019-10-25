@@ -1,0 +1,4 @@
+Exercicios Orientacao a Objeto
+Modele uma classe que realiza as seguintes operacoes em um arquivo texto
+represente individualmente cada palavra do texto conte a quantidade de ocorrencias de cada palavra do texto
+retorne as 10 palavras mais frequentes
