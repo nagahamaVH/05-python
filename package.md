@@ -74,5 +74,5 @@ zip_safe=False)
 Instalado pacote no ambiente conda
 
 ```
-pip install .
+pip install . --user
 ```
