@@ -1,5 +1,5 @@
- %
-% beamerthemeAI2.sty - VERSION 1.1 / Jun 23, 2018
+%
+% beamerthemeAI2.sty - VERSION 1.2 / Fev 20, 2020
 %
 % Created by Sergio Novaes on May 01, 2018.
 %
@@ -59,7 +59,10 @@
 \definecolor{mygray}{gray}{0.9}				% Light gray
 
 %\definecolor{westar}{HTML}{DAD7CB}
-
+% FOR Trebuchet FONT for Beamer
+%
+% \renewcommand{\sfdefault}{jtrr} 
+%
 % BASE :: courtesy of beamerthemeCambridgeUS.sty
 \mode<presentation>
 \useoutertheme{infolines}
@@ -68,11 +71,11 @@
 % custom colors
 \usecolortheme{beaver}
 % HEADER
-\setbeamercolor{frametitle}{fg=white,bg=rai2} % sandstone
+\setbeamercolor{frametitle}{fg=white,bg=rai2}% AI2
 \setbeamercolor{local structure}{fg=black}
 %\setbeamercolor{palette primary}{fg=spr,bg=sandstone} %ORG
 % FOOTER
-\setbeamercolor{palette primary}{fg=white,bg=bai2}  
+\setbeamercolor{palette primary}{fg=white,bg=bai2}  % AI2
 \setbeamercolor{palette secondary}{fg=white,bg=bai2} 
 \setbeamercolor{palette tertiary}{fg=white,bg=bai2}
 \setbeamercolor{titlelike}{fg=white,bg=bai2}
@@ -84,32 +87,6 @@
 \setbeamertemplate{subsection in toc}%
 {\hspace{1em}$\bullet$~\inserttocsubsection\par}
 \setbeamertemplate{itemize items}{$\bullet$}
-
-
-% BASE :: courtesy of beamerthemeCambridgeUS.sty
-% \mode<presentation>
-% \useoutertheme{infolines}
-% \useinnertheme[shadow=false]{rounded}
-% \setbeamerfont{block title}{size={}}
-% % custom colors
-% \usecolortheme{beaver}
-% % HEADER
-% \setbeamercolor{frametitle}{fg=spr,bg=beg} % sandstone
-% \setbeamercolor{local structure}{fg=black}
-%\setbeamercolor{palette primary}{fg=spr,bg=sandstone} %ORG
-% FOOTER
-% \setbeamercolor{palette primary}{fg=white,bg=spr}  
-% \setbeamercolor{palette secondary}{fg=white,bg=spr} 
-% \setbeamercolor{palette tertiary}{fg=white,bg=spr}
-% \setbeamercolor{titlelike}{fg=white,bg=spr}
-% kill certain unprofessional elements
-% \setbeamertemplate{navigation symbols}{}
-% \setbeamertemplate{bibliography item}{}
-% \setbeamertemplate{section in toc}%
-% {\inserttocsectionnumber.~\inserttocsection}
-% % \setbeamertemplate{subsection in toc}%
-% {\hspace{1em}$\bullet$~\inserttocsubsection\par}
-% \setbeamertemplate{itemize items}{$\bullet$}
 
 % plain and definition theorem styles in sandstone
 \makeatletter
@@ -159,11 +136,82 @@
     \end{beamercolorbox}%
 }%
 
+% PACKAGES
 \usefonttheme{professionalfonts}
-\usepackage{tikz}
-\usetikzlibrary{calc}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{slashed}
+% BOLD MATH FONT
+\usepackage{dsfont}
+% BRA KET
+\usepackage{physics}
+\usepackage{graphicx}
+\newcommand{\sfb}[1]{\textsf{\textbf{#1}}}
+% FOR TABLES
+%\usepackage{MnSymbol}
+\newcommand{\tittab}[1]{{\cellcolor{spr}{\textcolor{white}{\large\textbf{\textsf{#1}}}}}}
+\renewcommand{\arraystretch}{1.5}
+% FEYNMAM DIAGRAMS
+%\usepackage{feynman}
+%\usepackage{multimedia}
+% TO INCLUDE Video = SWF (Flash)
+%\usepackage{media9}
+% TO INCLUDE GIF
+%\usepackage{animate}
+% TO INCLUDE EMOJI  http://www.thetawelle.de/?p=5539
+\usepackage{scalerel} % needed package to scale the pdf-images perfectly
+% NOBEL :: \def\nobel{\scalerel*{\includegraphics{Figures/nobel.pdf}}{O}}
+%
+% LONG DOWN ARROW :: \Big\Downarrow
+\newcommand{\xdownarrow}[1]{ {\left\downarrow\vbox to #1{}\right.\kern-\nulldelimiterspace}}
+% https://tex.stackexchange.com/questions/213811/how-to-elongate-down-arrow 
+%
+% TO PUT REFERENCE ON THE BOTTOM RIGHT OF SLIDE
+% https://tex.stackexchange.com/questions/211518/beamer-vfill-and-itemize
+\usepackage[absolute,overlay]{textpos}
+%\newcommand*{\XOffsetFromBottomRight}{-10em}% XOffsetFromBottomRight
+%\newcommand*{\YOffsetFromBottomRight}{2.0ex} % YOffsetFromBottomRight
+
+\newenvironment{texpos}[3]{  
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{7.87cm}{4.37cm}
+\begin{textblock*}{\textwidth}(#1,#2){#3} \end{textblock*} }%
+
+% SINGLE 
+\newcommand*{\XOffS}{+18.5em}% X Offset From Bottom Right for Single Column
+\newcommand*{\YOffS}{2.0ex} % Y Offset From Bottom Right for Single  Column
+\newcommand*{\refbotS}[1]{%
+    \par%
+    \begin{textblock*}{\textwidth}(\dimexpr\textwidth-\XOffS\relax,\dimexpr\textheight-\YOffS\relax)
+    \textcolor{spr}{ {\small \slshape  #1}}%
+    \end{textblock*}%
+}%
+
+% DOUBLE
+\newcommand*{\XOffD}{-1.3em}% XOffsetFromBottomRight Double Column
+\newcommand*{\YOffD}{2.0ex} % YOffsetFromBottomRight Double Column
+\newcommand*{\refbotD}[1]{%
+    \par%
+    \begin{textblock*}{\textwidth}(\dimexpr\textwidth-\XOffD\relax,\dimexpr\textheight-\YOffD\relax)
+     \textcolor{spr}{ {\small \slshape  #1}}%
+    \end{textblock*}%
+}%
+
+% TO INDICATE THAT THERE ARE HIDDEN SLIDES
+\newcommand*{\XOffH}{-0.8em}% X Offset From Bottom Right for Single Column
+\newcommand*{\YOffH}{1.5ex} % Y Offset From Bottom Right for Single  Column
+\newcommand*{\hid}{%
+    \par%
+    \begin{textblock*}{\textwidth}(\dimexpr\textwidth-\XOffH\relax,\dimexpr\textheight-\YOffH\relax)
+     \textcolor{spr}{$\blacksquare$}%
+    \end{textblock*}%
+}%
+
+% >>> \blacktriangleright 
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
 \usetikzlibrary{arrows,shapes}
 
 % PROJECT STATUS
@@ -204,9 +252,14 @@
 \newcommand{\sprbox}{{\fcolorbox{rai2}{white}{}}}
 \newcommand{\sprbul}{\color{rai2}\scalebox{1}{\textbullet}}
 \newcommand{\sprcir}{\color{rai2}\scalebox{1.3}{$\circ$}}
+%
 \newcommand{\IteOne}[1]{\item[$\raisebox{+3.5pt}{{\sprbox}}$] {\normalsize #1}}
 \newcommand{\IteTwo}[1]{\item[$\raisebox{+1pt} \sprbul$] {\small #1}}
 \newcommand{\IteThr}[1]{\item[\sprcir] {\small #1}}
+
+\newcommand{\iOn}[1]{\setlength{\itemindent}{0.2cm} \item[$\raisebox{+3pt}{{\sprbox}}$] {\normalsize #1}}
+\newcommand{\iTw}[1]{\setlength{\itemindent}{0.6cm} \item[$\raisebox{+1pt} \sprbul$] {\small #1}}
+\newcommand{\iTh}[1]{\setlength{\itemindent}{1.05cm}\item[\sprcir] {\small #1}}
 
 % Vitor: 
 % http://timmurphy.org/2010/07/05/changing-itemize-bullet-styles-in-latex/
@@ -226,14 +279,13 @@
 %      \end{itemize}
 %   \end{itemize}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% BULLETS - EASYLIST : SEE https://en.wikibooks.org/wiki/LaTeX/List_Structures
 % To use easylist with Beamer, each frame that uses easylist must be marked as fragile
 % \usepackage[ampersand]{easylist}
-% \newcommand{\sprbox}{{\fcolorbox{rai2}{white}{}}}
-% \newcommand{\sprbul}{\color{rai2}\scalebox{1}{\textbullet}}
-% \newcommand{\sprcir}{\color{rai2}\scalebox{1.3}{$\circ$}}
+% \newcommand{\sprbox}{{\fcolorbox{spr}{white}{}}}
+% \newcommand{\sprbul}{\color{spr}\scalebox{1}{\textbullet}}
+% \newcommand{\sprcir}{\color{spr}\scalebox{1.3}{$\circ$}}
 % \ListProperties(Hide=100, Hang=true, Progressive=3ex, Style1*= $\raisebox{+3.5pt}{{\sprbox}} \;\;  $, Style2*=$\raisebox{+1pt} \sprbul \;\, $, Style3*=$\sprcir \, $ ) %
 % \newcommand{\bli}{\begin{easylist}}
 % \newcommand{\eli}{\end{easylist}}
@@ -243,9 +295,52 @@
 %   && Blah
 %   &&& Blah
 %   \eli
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% ENVIROMENT FOR DIFFERENT SLIDE TYPES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ENVIRONMENT FOR CITATIONS
+%
+\newenvironment{cittex}[1]{
+%\begin{minipage}
+%\hspace{2\parskip}
+%\vspace{2\parindent}
+\begin{table}[h]
+\begin{tabular}[3]{ r | r  p{12cm}}
+\LARGE{  ``}&  & {\raggedright\slshape\small #1 }\\
+\end{tabular}
+\end{table}
+%\end{minipage}
+}%
+
+\newenvironment{cittexD}[1]{
+%\begin{minipage}
+%\hspace{2\parskip}
+%\vspace{2\parindent}
+\begin{table}[h]
+\begin{tabular}[3]{ r | r  p{6cm}}
+\LARGE{ ``}& & {\raggedright\slshape\small #1 }\\
+\end{tabular}
+\end{table}
+%\end{minipage}
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ENVIRONMENT FOR TABLE OF CONTENT
+% SEE: https://tex.stackexchange.com/questions/160825/modifying-margins-for-one-slide
+\newcommand\toccom[2][-2.5em]{%
+\makebox[\linewidth][r]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+\newcommand\tocitem[2]{
+\begin{itemize}\iOn{\bf#1}\end{itemize}
+\toccom{\footnotesize\textit{#2}}
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ENVIRONMENT FOR DIFFERENT SLIDE TYPES
 % SEE: https://bloerg.net/2012/06/21/customizing-the-frametitle-of-beamer-presentation.html
 
 %%% SLIDE TITLE
@@ -269,28 +364,6 @@
 \end{frame}
 }%
 
-%%% SLIDE TITLE
-%\newenvironment{SliTit}[3]{  
-%\begin{frame}[plain]
-%{}
-% \img{4.8}{2.5}{0.4}{AI2Logo.png}
-
-%{}
-%\vspace{1.2cm}\hspace{1cm}
-%\textcolor{bai2}
-%{\Huge #1}
-
-%\sprlin
-
-%\vspace{0.2cm} \hspace{1.2cm}
-%\textcolor{rai2}{\Large #2}
-
-%\vspace{0.1cm} \hspace{1.2cm}
-%\textcolor{rai2}{ #3}
-
-%\end{frame}
-%}%
-
 %%% SLIDE SUB-TITLE
 \newenvironment{SliSubTit}[2]{  
 \begin{frame}[plain]
@@ -309,14 +382,38 @@
 \end{frame}
 }%
 
+%%% SLIDE SUB-SUB-TITLE
+\newenvironment{SliSubSubTit}[2]{  
+\begin{frame}[plain]
+{}
+%\begin{figure}[r] \vspace{-0.5cm} \hspace{12cm} \href{http://sprace.org.br}{\includegraphics[scale=0.35]{SpraceLogo.png}} \end{figure}
+
+\vspace{1.2cm}\hspace{1cm}
+{\LARGE #1}
+
+\sprlin
+
+\vspace{0.2cm} \hspace{1.05cm}
+\textcolor{spr}{\large #2}
+
+\end{frame}
+}%023
+
 %%% SLIDE NORMAL WITH TITLE
 \newenvironment{SliT}[2]{  
 \begin{frame}
-\frametitle{\bf \hspace{0.1cm} #1}
+\frametitle{#1}
 {#2}
 \end{frame}
 }%
- 
+
+
+\newenvironment{SliTC}[1]
+{\begin{frame}[environment=SliTC,fragile]
+    \frametitle{{#1}}}
+{\end{frame}}%
+
+
  
 %%% SLIDE NORMAL NO TITLE 
 % 0 = meaning formulas may never be broken and 4 =(the default), meaning that formulas can be broken anywhere without any penalty.
@@ -331,7 +428,7 @@
 %%% SLIDE DOUBLE COLUMNS WITH TITLE
 \newenvironment{SliDT}[3]{  
  \begin{frame} 
-\frametitle{\bf \hspace{0.1cm} #1}
+\frametitle{#1}
 \begin{columns}
 \begin{column}{0.5\textwidth}
    #2
@@ -362,7 +459,7 @@
 \newenvironment{SliAdvT}[2]{  
 {\setbeamercolor{background canvas}{bg=beglig}
 \begin{frame} 
-\frametitle{\bf \hspace{0.1cm} #1}
+\frametitle{#1}
 #2
 \end{frame}
 }}%
@@ -376,11 +473,11 @@
 \end{frame}
 }}%
 
-%%%  >>>>. SLIDE ADVANCED DOUBLE COLUMNS WITH TITLE
+%%% SLIDE ADVANCED DOUBLE COLUMNS WITH TITLE
 \newenvironment{SliAdvDT}[3]{
 {\setbeamercolor{background canvas}{bg=beglig}
 \begin{frame} 
-\frametitle{\bf \hspace{0.1cm} #1}
+\frametitle{#1}
 \begin{columns}
 \begin{column}{0.5\textwidth}
    #2
@@ -408,20 +505,77 @@
 \end{frame}
 }}%
 
-%%% SLIDE EXERCICIO
-\newenvironment{Exe}[2]{  
+%%% SUGGESTED REFERENCE BOX
+\newenvironment{sug}[1]{  
 \begin{center}
 \begin{minipage}[h]{0.95\linewidth} 
-\begin{tcolorbox}[colback=sandstone,colframe=sandstone,title={\textcolor{rai2}{\Large Exercício #1}} ]
+\begin{tcolorbox}[colback=cloud,colframe=driftwood,title={\textcolor{rai2}{\large\bf Refer\^encias e Leituras Sugeridas}} ]
+{\small #1}   
+\end{tcolorbox} 
+\end{minipage}  
+\end{center}
+}%
+
+%%% SLIDE EXERCICIO
+\newenvironment{exe}[2]{  
+\begin{center}
+\begin{minipage}[h]{0.95\linewidth} 
+\begin{tcolorbox}[colback=lightbeige,colframe=sandstone,title={\textcolor{rai2}{\large\bf Exerc\'{\i}cio #1}} ]
 {#2}   
 \end{tcolorbox} 
 \end{minipage}  
 \end{center}
 }%
 
+%%% SLIDE BLACK
+\newenvironment{Black}[1]{  
+{\setbeamercolor{background canvas}{bg=black}
+{\begin{frame}[plain]
+\begin{center}
+\begin{minipage}[h]{1\linewidth} 
+#1
+\end{minipage}  
+\end{center}
+\end{frame} }
+}}%
+
+\newenvironment{SliBlack}[1]{  
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\begin{center}
+\begin{minipage}[h]{1\linewidth} 
+#1
+\end{minipage}  
+\end{center}
+\end{frame}
+}%
+
+%%% SLIDE WHITE
+\newenvironment{White}[1]{  
+{\setbeamercolor{background canvas}{bg=white}
+{\begin{frame}[plain]
+\begin{center}
+\begin{minipage}[h]{1\linewidth} 
+#1
+\end{minipage}  
+\end{center}
+\end{frame} }
+}}%
+
+\newenvironment{SliWhite}[1]{  
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[plain]
+\begin{center}
+\begin{minipage}[h]{1\linewidth} 
+#1
+\end{minipage}  
+\end{center}
+\end{frame}
+}%
+
 %%% SECTIONING
-\newcommand{\secx}[1]{{\color{bluehover}\Large\textbf{#1}}}
-\newcommand{\secxx}[1]{{\color{paloalto}\large\textbf{#1}}}
+\newcommand{\secx}[1]{{\color{bluehover}\large\textbf{#1}}}
+\newcommand{\secxx}[1]{{\color{paloalto}\textbf{#1}}}
 
 %%% SPACE BETWEEN PARAGRAPHS
 \setlength{\parskip}{0.2cm}
@@ -444,6 +598,54 @@
 %%% BOLD
 \newcommand{\bfs}[1]{{\color{rai2}\bf #1}}
 
+%%% Listings definitions
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+
+% Solarized colour scheme for listings
+\definecolor{solarized@base03}{HTML}{002B36}
+\definecolor{solarized@base02}{HTML}{073642}
+\definecolor{solarized@base01}{HTML}{586e75}
+\definecolor{solarized@base00}{HTML}{657b83}
+\definecolor{solarized@base0}{HTML}{839496}
+\definecolor{solarized@base1}{HTML}{93a1a1}
+\definecolor{solarized@base2}{HTML}{EEE8D5}
+\definecolor{solarized@base3}{HTML}{FDF6E3}
+\definecolor{solarized@yellow}{HTML}{B58900}
+\definecolor{solarized@orange}{HTML}{CB4B16}
+\definecolor{solarized@red}{HTML}{DC322F}
+\definecolor{solarized@magenta}{HTML}{D33682}
+\definecolor{solarized@violet}{HTML}{6C71C4}
+\definecolor{solarized@blue}{HTML}{268BD2}
+\definecolor{solarized@cyan}{HTML}{2AA198}
+\definecolor{solarized@green}{HTML}{859900}
+
+% Define syntax highlighting colour scheme
+\lstset{basicstyle=\footnotesize\ttfamily,
+        numbers=left,
+        numberstyle=\footnotesize,
+        tabsize=2,
+        breaklines=true,
+        escapeinside={@}{@},
+        numberstyle=\tiny\color{solarized@base01},
+        keywordstyle=\color{solarized@green},
+        stringstyle=\color{solarized@cyan}\ttfamily,
+        identifierstyle=\color{solarized@blue},
+        commentstyle=\color{solarized@base01},
+        emphstyle=\color{solarized@red},
+        frame=single,
+        rulecolor=\color{solarized@base2},
+        rulesepcolor=\color{solarized@base2},
+        showstringspaces=false,
+        xleftmargin=1em,
+        frame=single,
+        framexleftmargin=1.5em
+}
+
+
+
 %%% FRAME EQUATION
 % https://tex.stackexchange.com/questions/122945/coloured-shadowed-boxes-around-equations
 % https://tex.stackexchange.com/questions/287438/tcolorbox-without-background-color-transparent
@@ -461,12 +663,21 @@
 % BLU :: \frab
 \newcommand{\frab}[1]{\tcbset{highlight math style={standard jigsaw, opacityback=0, colframe=sky!40, arc=0pt, boxrule=1.5pt}}  \tcbhighmath{#1}}
 
-%
 % BLACK :: \frablack
 \newcommand{\frablack}[1]{\tcbset{highlight math style={standard jigsaw, opacityback=0, colframe=coolgrey, arc=0pt, boxrule=1.5pt}}  \tcbhighmath{#1}}
 %
 % COLORS % http://latexcolor.com
 \usepackage{xcolor}  % \color{colorname}
+\usepackage{colortbl}
+\newcommand{\tspace}{\rule[-0.6\baselineskip]{0pt}{1.7\baselineskip}}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=white,      % SPRACE @ the bottom
+    filecolor=bluelink,
+    urlcolor=bluelink,
+}%
+%
 \newcommand{\yel}[1]{\mathchoice%
   {\colorbox{sun!20}{$\displaystyle #1$}}%
   {\colorbox{sun!20}{$\textstyle #1$}}%
@@ -491,6 +702,12 @@
   {\colorbox{sky!20}{$\scriptstyle #1$}}%
   {\colorbox{sky!20}{$\scriptscriptstyle #1$}}
   }%
+  \newcommand{\bege}[1]{\mathchoice%
+  {\colorbox{beg}{$\displaystyle #1$}}%
+  {\colorbox{beg}{$\textstyle #1$}}%
+  {\colorbox{beg}{$\scriptstyle #1$}}%
+  {\colorbox{beg}{$\scriptscriptstyle #1$}}
+  }%
 
 % For every picture that defines or uses external nodes, you'll have to apply the 'remember picture' style. 
 % To avoid some typing, we'll apply  the style to all pictures.
@@ -508,10 +725,13 @@
 % FOR FORMULAS 
 \usepackage{slashed} 
 \renewcommand{\sl}{\slashed}
+\newcommand{\portanto}{\;\;\;\; {\boldmath{ \dot{.\hspace{.095in}.}\hspace{.5in} } }\!\!\!\!\!\!\!\!\! }
+\newcommand{\ins}[1]{ \quad \text{#1} \quad }
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \usepackage[thicklines]{cancel} % \cancel{expression}
 \renewcommand\CancelColor{\color{rai2}}
+\newcommand{\barr}[1]{\overline{#1}}
 % EQUATION
 \newcommand{\beq}{\begin{equation}}
 \newcommand{\eeq}[1]{\label{#1} \end{equation}}
@@ -521,10 +741,132 @@
 % EQUATION ARRAY WITHOUT NUMBER
 \newcommand{\be}{\begin{eqnarray*}}
 \newcommand{\ee}{\end{eqnarray*}}
+% EQUATION WITH GATHER WITHOUT NUMBER ::  SEE 6 @ ftp://ftp.ams.org/pub/tex/doc/amsmath/technote.pdf
+\newcommand\gat[1]{\gathered#1\endgathered}
 % ARRAY
 \newcommand{\ba}{\begin{array}}
 \newcommand{\ea}{\end{array}}
 % TABULAR
 \newcommand{\bt}{\begin{tabular}{ll}}
 \newcommand{\et}{\end{tabular}}
+%###############################################################################
+%****************************** MACRO_SEMINAR.TEX ******************************
+%###############################################################################
+% SPECIFIC DEFINITONS:
+% Dirac matrix
+\newcommand{\gc}{\gamma_5}
+\newcommand{\g}{\gamma}
+% slash
+\newcommand{\sla}[1]{\not \!\! #1}
+% left doublet
+\newcommand{\ld}{\mbox{\sf L}}
+% right singlet
+\newcommand{\rs}{\mbox{\sf R}}
+% Lagrangian
+\newcommand{\lag}{{\cal L}}
+% Observable
+\newcommand{\obs}{{\cal O}}
+% del
+\newcommand{\del}{\partial}
+% del slash
+\newcommand{\dels}{\not \! \partial}
+% et alli
+\newcommand{\etall}{{\it et al.~}}
+
+% YELLOW FILLED BOX
+\newcommand{\yelbox}[1]{\begin{center}
+\psframebox[%
+fillcolor=yellow,fillstyle=solid]{% 
+\hbox{\large \bf \black #1} \black}
+\end{center}}
+
+%\newcommand{\yelbox}[1]{\begin{center}
+%\psframebox[%
+%fillcolor=yellow,gradbegin=yellow,gradangle=45,fillstyle=gradient]{%
+%\hbox{\large \bf \black #1} \black}
+%\end{center}}
+
+% HEADINGS : 3D BOX
+\newcommand{\heading}[1]{%
+    \begin{center}
+      \large\bf
+      \shadowbox{#1}%
+    \end{center}
+    \vspace{1ex minus 1 ex}}
+
+\newcommand{\pq}{\scriptstyle}
+\newcommand{\mpq}{\scriptscriptstyle}
+
+% CENTERING
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\cl}[1]{\centerline{#1}}
+
+%
+% MATHEMATICS
+%
+\newcommand{\one}{\mathds{1}}
+% YOUNG TABLEAUX
+\usepackage{ytableau}
+\ytableausetup{centertableaux}
+% NO NUMBER
+\newcommand{\non}{\nonumber \\}
+% REFERENCE TO EQUATION
+\newcommand{\eq}[1]{Eq.(\ref{#1})}
+% ITEMIZE
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+% NUMERATION
+\newcommand{\benum}{\begin{enumerate}}
+\newcommand{\eenum}{\end  {enumerate}}
+% FIGURE
+\newcommand{\bfig}{\begin{figure}}
+\newcommand{\efig}{\end  {figure}}
+
+% ASYMMETRIC EXPERIMENTAL ERROR 
+\newcommand{\err}[2]{\stackrel{\mpq +#1}{{\mpq -#2}}}
+
+% DENOTING FIGURES (box + dot or green tree)
+\newcommand{\fig}{\hfill{\small \green \fbox{$\bullet$}}}
+%\newcommand{\fig}{\hfill{\small \green $\clubsuit$}}
+
+% ARROWS
+\newcommand{\rar}{$\longrightarrow$}
+\newcommand{\lar}{$\longleftarrow$}
+\newcommand{\uar}{$\uparrow$}
+\newcommand{\dar}{$\downarrow$}
+\newcommand{\ner}{$\nearrow$}
+\newcommand{\nor}{$\nwarrow$}
+\newcommand{\ser}{$\searrow$}
+\newcommand{\sor}{$\swarrow$}
+
+% LEFT RIGHT ARROW
+\newcommand{\lra}{~~$\longleftrightarrow$~~}
+% IMPLY
+\newcommand{\imp}{~~$\Longrightarrow$~~}
+% LEFT RIGHT IMPLY
+\newcommand{\Llra}{~~$\Longleftrightarrow$~~}
+% CHAVE 
+\newcommand{\cha}[2]{\underbrace{#1}_{#2}}
+
+%
+% #########
+%
+\newcommand{\ie}{{\it i.e. }}
+\newcommand{\eg}{{\it e.g. }}
+\newcommand{\br}[1]{\mbox{ Br}(#1)}
+\newcommand{\cita}[1]{%
+        %\noindent 
+{\green \tiny #1}
+}
+\def\lsim{\mathrel{\raise.3ex\hbox{$<$\kern-.75em\lower1ex\hbox{$\sim$}}}}
+\def\gsim{\mathrel{\raise.3ex\hbox{$>$\kern-.75em\lower1ex\hbox{$\sim$}}}}
+\newcommand{\ptmis}{{ {\rm p} \hspace{-0.53 em} \raisebox{-0.27 ex} {/}_T }}
+
+\newcommand{\sell}{{\tilde{\ell}}}
+\newcommand{\schi}{{\tilde{\chi}}}
+
+%###############################################################################
+%*******************************************************************************
+%###############################################################################
 
