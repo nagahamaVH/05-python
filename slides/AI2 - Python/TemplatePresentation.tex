@@ -875,6 +875,10 @@ Outras características de uma classe:
     \IteOne{Tudo que a superclasse possui, a subclasse também vai possuir}
     \IteOne{Em Python, todas as classes herdam a classe Object}
 \end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{heranca.png}
+\end{figure}
 
 }
 
@@ -912,6 +916,21 @@ class Critter:
         self.name = name
 \end{lstlisting}
 \end{SliTC}
+\begin{SliTC}{Orientação a objeto}
+\secxx{Atributos e Métodos de um objeto são acessíveis através de "."}
+\begin{lstlisting}[language=python]
+class Classe():
+    def __init__(self):
+        self.atributo = 0
+    def metodo(self):
+        print(self.atributo)
+obj = Classe()
+print(obj.atributo)
+obj.metodo()
+\end{lstlisting}
+\end{SliTC}
+
+
 
 \begin{SliTC}{Orientação a objeto}
 
@@ -1022,14 +1041,52 @@ print(myobjectx.getvariable())
 \end{lstlisting}
 \end{SliTC}
 
-\SliT{Criando Pacotes para Compartilhamento de Classes}{
+\begin{SliTC}{Orientação a objeto}
+\begin{itemize}
+    \iteOne{Subclasses conseguem acessar métodos de suas superclasses.}
+    \iteOne{O método \textit{super} acessa o construtor da classe mãe}
+\end{itemize}
+
+\begin{lstlisting}[language=python]
+class Mae()
+    def __init__(self):
+        self.a = 0
+    def print_a(self):
+        print(self.a)
+class Filha(Mae):
+    def __init__(self):
+        super().__init__()
+        self.b = 1
+    def print_b(self):
+        self.print_a()
+        print(self.b)
+obj = Filha()
+obj.print_b()
+        
+        
+\end{lstlisting}
+
+
+\end{SliTC}
+
+
+\Sli{
+
+\begin{itemize}
+    \item A orientação a objetos permite construir códigos facilmente reusáveis
+    \item Além disso, o código fica mais legível e fácil de dar manutenção
+\end{itemize}
 
 }
 
-\SliT{MultiThreading}{
+%\SliT{Criando Pacotes para Compartilhamento de Classes}{
 
-}
+%}
 
-\end{frame}
+%\SliT{MultiThreading}{
+
+%}
+
+
 
 \end{document}

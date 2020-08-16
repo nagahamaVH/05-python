@@ -106,3 +106,30 @@ Faça um programa que pergunte a idade, o peso e quanto dormiu nas últimas 24 h
     She sells seashells on the sea
     shore;
 ```
+
+
+### 18) Escreva um programa que conta a frequência de cada caracter em um arquivo.
+
+
+
+### 19) Escreva um programa que acha os anagramas em uma lista de palavras (duas palavras são anagramas se uma palavra pode ser formada rearranjando as letras de outra)  
+
+```
+
+    >>> anagrams(['eat', 'ate', 'done', 'tea', 'soup', 'node'])
+    [['eat', 'ate', 'tea], ['done', 'node'], ['soup']]
+```    
+### 20) Escreva uma funcão ``valuesort`` para ordenar valores em um dicionário baseado em sua chave.
+
+```
+
+    >>> valuesort({'x': 1, 'y': 2, 'a': 3})
+    [3, 1, 2]
+```
+### 21) Escreva a funcão ``invertdict`` para inverter chaves e valores no dicionário.
+
+```
+
+    >>> invertdict({'x': 1, 'y': 2, 'z': 3})
+    {1: 'x', 2: 'y', 3: 'z'}
+```
