@@ -3,20 +3,18 @@ from solaces.lib.aula2 import _sqrt_pow2
 
 
 def test_power2():
-    x = -5
-    y = -1.2
+    x = -1.2
     assert _sqrt_pow2(x) == x ** 2
-    assert _sqrt_pow2(y) == y ** 2
 
 
-def test_sqrt():
+def test_sqrt_greater_than_zero():
     import math
-    x = 12
-    y = 0
-    z = 81
+    x = 12.3
     assert _sqrt_pow2(x) == math.sqrt(x)
-    assert _sqrt_pow2(y) == math.sqrt(y)
-    assert _sqrt_pow2(z) == math.sqrt(z)
+
+
+def test_sqrt_zero():
+    assert _sqrt_pow2(0) == 0
 
 
 class TestInvalidInput:

@@ -6,7 +6,6 @@ class TestValidInput:
     def test_greater_than_one(self):
         import math
 
-        assert factorial(4) == 24
         assert factorial(12) == math.factorial(12)
 
     def test_one(self):
