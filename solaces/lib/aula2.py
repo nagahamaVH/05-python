@@ -25,3 +25,26 @@ def sqrt_pow2():
     result = _sqrt_pow2(x)
 
     return result
+
+
+# Exercicio 16
+def read_raw(path):
+    open_text = open("./solaces/data/she.txt", "r")
+    text = open_text.read()
+    open_text.close()
+
+    return text
+
+
+def _reverse(text):
+    text = text.split("\n")
+    text.reverse()
+    return text
+
+
+def reverse(path):
+    text = read_raw(path)
+    reverse_text = _reverse(text)
+
+    for x in reverse_text:
+        print(x)
