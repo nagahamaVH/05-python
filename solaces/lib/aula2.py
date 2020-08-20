@@ -48,3 +48,48 @@ def reverse(path):
 
     for x in reverse_text:
         print(x)
+
+
+# Exercicio 19
+def get_anagrams(words):
+    base = find_base_words(words)
+    anagrams = group_anagrams(words, base)
+
+    return anagrams
+
+
+def find_base_words(words):
+    if not isinstance(words, list):
+        raise TypeError("The input words must be a list")
+
+    if any(isinstance(w, list) for w in words):
+        raise ValueError("List of lists is not allowed")
+
+    base_words = []
+
+    for w in words:
+        base_w = "".join(sorted(w))
+        base_words.append(base_w)
+
+    return base_words
+
+
+def group_anagrams(words, base_words):
+    if len(words) != len(base_words):
+        raise ValueError("Mismatch of input lengths")
+
+    if words == []:
+        anagrams = [[]]
+    else:
+        anagrams = []
+
+        group_words = sorted(set(base_words))
+
+        for gw in group_words:
+            subgroup = []
+            for i in range(len(base_words)):
+                if base_words[i] == gw:
+                    subgroup.append(words[i])
+            anagrams.append(subgroup)
+
+    return anagrams
