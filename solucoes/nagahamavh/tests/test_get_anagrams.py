@@ -1,5 +1,5 @@
 import pytest
-from solaces.lib.aula2 import find_base_words, group_anagrams
+from solucoes.nagahamavh.lib.aula2 import find_base_words, group_anagrams
 
 
 @pytest.fixture

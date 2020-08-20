@@ -1,5 +1,5 @@
 import pytest
-from solaces.lib.aula2 import _sqrt_pow2
+from solucoes.nagahamavh.lib.aula2 import _sqrt_pow2
 
 
 def test_power2():

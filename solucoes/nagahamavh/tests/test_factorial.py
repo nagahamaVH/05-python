@@ -1,5 +1,5 @@
 import pytest
-from solaces.lib.aula2 import factorial
+from solucoes.nagahamavh.lib.aula2 import factorial
 
 
 class TestValidInput:
