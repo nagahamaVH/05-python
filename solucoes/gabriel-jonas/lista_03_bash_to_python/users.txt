@@ -1,0 +1,6 @@
+0, gabriel, 18, m
+1, jonas, 16, m
+2, julia, 22, f
+3, lionel, 28, m
+4, gabriela, 15, f
+5, neymar, 22, m
