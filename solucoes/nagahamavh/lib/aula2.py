@@ -29,7 +29,7 @@ def sqrt_pow2():
 
 # Exercicio 16
 def read_raw(path):
-    open_text = open("./solucoes/nagahamavh/data/she.txt", "r")
+    open_text = open(path, "r")
     text = open_text.read()
     open_text.close()
 
